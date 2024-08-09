@@ -10,7 +10,7 @@ const ProductList = () => {
   const fetchProducts = async () => {
     setLoading(true);
     try {
-      const response = await axios.post('https://shopifybackend-06p6.onrender.com', { sitemapUrl });
+      const response = await axios.post('https://shopifybackend-06p6.onrender.com/api/products', { sitemapUrl });
       setProducts(response.data.products);
     } catch (error) {
       console.error('Error fetching products:', error);
