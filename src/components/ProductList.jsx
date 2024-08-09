@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import ProductCard from "./ProductCard";
+// import ;
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -39,7 +40,7 @@ const ProductList = () => {
           value={sitemapUrl}
           onChange={(e) => setSitemapUrl(e.target.value)}
           placeholder="Enter sitemap URL"
-          className="p-2 border-2 border-gray-800 rounded"
+          className="p-2 border-2 border-gray-800 rounded w-1/2"
         />
         <button
           onClick={fetchProducts}
@@ -49,9 +50,13 @@ const ProductList = () => {
         </button>
       </div>
 
-      {loading && <p className="mt-4">Loading...</p>}
+      {loading && (
+        <div className="flex justify-center mt-4 ">
+          <div className="spinner"></div>
+        </div>
+      )}
 
-      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 mt-20  mr-60 ml-60">
+      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 mt-20  mr-72 ml-72">
         {filteredProducts.slice(0, 10).map((product, index) => (
           <ProductCard
             key={index}
