@@ -7,15 +7,10 @@ const ProductCard = ({ title, image, summary }) => {
         : [];
 
     return (
-        <div className="bg-white shadow-lg rounded-xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-            <img
-                src={image}
-                alt={title}
-                className="w-full h-56 object-cover"
-            />
-            <div className="p-6">
-                <h2 className="text-2xl font-bold text-gray-800">{title}</h2>
-                <ul className="mt-4 space-y-2">
+        <div className="bg-white shadow-lg rounded-xl overflow-hidden flex flex-col md:flex-row transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+            <div className="flex-1 p-6 md:w-2/3">
+                <h2 className="text-2xl font-bold text-gray-800 mb-4">{title}</h2>
+                <ul className="space-y-2">
                     {summaryPoints.length > 0 ? (
                         summaryPoints.map((point, index) => (
                             <li
@@ -31,6 +26,13 @@ const ProductCard = ({ title, image, summary }) => {
                         </li>
                     )}
                 </ul>
+            </div>
+            <div className="md:w-1/3">
+                <img
+                    src={image}
+                    alt={title}
+                    className="w-full h-56 object-cover"
+                />
             </div>
         </div>
     );
