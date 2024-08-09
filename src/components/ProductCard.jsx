@@ -7,7 +7,7 @@ const ProductCard = ({ title, image, summary }) => {
         : [];
 
     return (
-        <div className="bg-white shadow-lg rounded-xl overflow-hidden flex flex-col md:flex-row transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+        <div className="bg-white shadow-lg rounded-xl overflow-hidden flex flex-col md:flex-row transform transition-all duration-300 hover:scale-105 hover:shadow-xl bg-slate-200">
             <div className="flex-1 p-6 md:w-2/3">
                 <h2 className="text-2xl font-bold text-gray-800 mb-4">{title}</h2>
                 <ul className="space-y-2">
